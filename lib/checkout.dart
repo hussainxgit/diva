@@ -46,7 +46,6 @@ class _CheckOutState extends State<CheckOut> {
         (String invoiceId, MFResult<MFPaymentStatusResponse> result) => {
               if (result.isSuccess())
                 {
-                  print(result.response.toJson().toString()),
                   placeOrder(
                           Order(
                               userAddress: cart.user.getDefaultAddress(),
@@ -148,7 +147,7 @@ class _CheckOutState extends State<CheckOut> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          ViewAllAddress()),
+                                                          const ViewAllAddress()),
                                                 );
                                               },
                                             ),
@@ -295,7 +294,7 @@ class _CheckOutState extends State<CheckOut> {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            ViewAllAddress()));
+                                                            const ViewAllAddress()));
                                               },
                                             ),
                                           ],
