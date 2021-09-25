@@ -14,7 +14,7 @@ class Profile extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  ViewAllAddress()),
+                  const ViewAllAddress()),
         );
       },child: const Text('your addresses'),),),
     );

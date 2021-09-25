@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
             // ignore: deprecated_member_use
             TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   backgroundColor: Colors.black,
                 ),
                 child: const Text('تسجيل الدخول',
@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                 }),
             TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   backgroundColor: Colors.black,
                 ),
                 child: const Text('انشاء حساب جديد',

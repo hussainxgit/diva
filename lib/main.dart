@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
   int _selectedPage = 0;
   Widget currentScreen;
   final _pageOptions = [
-    HomePage(),
+    const HomePage(),
     const OffersPage(),
     const CartPage(),
   ];
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer<Carts>(builder: (context, cart, child) {
       return Scaffold(
-        endDrawer: CustomDrawer(),
+        endDrawer: const CustomDrawer(),
         appBar: AppBar(
           title: const Text(
             'ديفــا',

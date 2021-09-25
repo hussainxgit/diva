@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:diva/provider/cart.dart';
 
 class CustomAppBar extends PreferredSize {
+  const CustomAppBar({Key key}) : super(key: key);
+
   @override
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 
@@ -11,7 +13,7 @@ class CustomAppBar extends PreferredSize {
     return Consumer<Carts>(builder: (context, cart, child) {
       return SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -35,7 +37,7 @@ class CustomAppBar extends PreferredSize {
                                 child: Stack(
                                   children: <Widget>[
                                     IconButton(
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.shopping_cart,
                                         color: Colors.black54,
                                       ),
@@ -56,7 +58,7 @@ class CustomAppBar extends PreferredSize {
                                                     child: Text(
                                                       cart.basketItems.length
                                                           .toString(),
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           color: Colors.white,
                                                           fontSize: 11.0,
                                                           fontWeight:
@@ -107,7 +109,7 @@ class CustomAppBar extends PreferredSize {
                   color: Colors.white, // button color
                   child: InkWell(
                     splashColor: Colors.red, // inkwell color
-                    child: SizedBox(
+                    child: const SizedBox(
                       width: 56,
                       height: 56,
                       child: Icon(Icons.category, color: Colors.black54),
