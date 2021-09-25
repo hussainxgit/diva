@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'address/ViewAllAddress.dart';
+import 'address/view_all_address.dart';
 
 class Profile extends StatelessWidget {
+  const Profile({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('addresses'),),
+      appBar: AppBar(title: const Text('addresses'),),
       body: Center(child: ElevatedButton(onPressed: (){
         Navigator.push(
           context,
@@ -14,7 +16,7 @@ class Profile extends StatelessWidget {
               builder: (context) =>
                   ViewAllAddress()),
         );
-      },child: Text('your addresses'),),),
+      },child: const Text('your addresses'),),),
     );
   }
 }

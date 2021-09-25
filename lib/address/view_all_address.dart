@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:diva/address/address.dart';
-import 'package:diva/apiResponse.dart';
+import 'package:diva/api_response.dart';
 import 'package:diva/Models/user.dart';
-import 'package:diva/address/editAddress.dart';
+import 'package:diva/address/edit_address.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:provider/provider.dart';
 
 class ViewAllAddress extends StatefulWidget {
+  const ViewAllAddress({Key key}) : super(key: key);
+
   @override
   _ViewAllAddressState createState() => _ViewAllAddressState();
 }
@@ -18,19 +20,19 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
         builder: (context, cart, child) {
       return Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'اختر العنوان المناسب',
               style: TextStyle(fontFamily: 'Droid', color: Colors.black54),
             ),
             centerTitle: true,
             backgroundColor: Colors.grey[100],
             elevation: 0,
-            iconTheme: IconThemeData(color: Colors.black54),
+            iconTheme: const IconThemeData(color: Colors.black54),
           ),
           body: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             children: [
-              SizedBox(
+              const SizedBox(
                 child: Image(
                   image: AssetImage('images/delivery.jpg'),
                   fit: BoxFit.cover,
@@ -39,7 +41,7 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
               Container(
                 height: 70,
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   'قائمة العناوين الخاصة بك',
                   style: TextStyle(fontSize: 18, fontFamily: 'Droid'),
                 ),
@@ -54,9 +56,9 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                           background: Container(
                             color: Colors.red,
                             child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 20),
+                              margin: const EdgeInsets.symmetric(horizontal: 20),
                               alignment: Alignment.centerRight,
-                              child: Text(
+                              child: const Text(
                                 'حذف العنوان',
                                 style: TextStyle(
                                     fontFamily: 'Droid', color: Colors.white),
@@ -78,7 +80,7 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                                   ListTile(
                                     title: Text(
                                       cart.user.address[index].area,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontFamily: 'Droid', fontSize: 14),
                                     ),
                                     subtitle: Row(
@@ -86,27 +88,27 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                                         Text(
                                           " ق " +
                                               cart.user.address[index].block,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
                                         Text(
                                           " ش " +
                                               cart.user.address[index].street,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
                                         Text(
                                           " ج " + cart.user.address[index].jada,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
                                         Text(
                                           " د " +
                                               cart.user.address[index].floor,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
@@ -114,21 +116,21 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                                           " م " +
                                               cart.user.address[index]
                                                   .houseNumber,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
                                       ],
                                     ),
                                     leading:
-                                        Icon(Icons.location_history_outlined),
+                                        const Icon(Icons.location_history_outlined),
                                     trailing: cart
                                             .user.address[index].userDefault
-                                        ? Icon(
+                                        ? const Icon(
                                             Icons.location_on,
                                             color: Colors.orange,
                                           )
-                                        : Padding(padding: EdgeInsets.all(0)),
+                                        : const Padding(padding: EdgeInsets.all(0)),
                                     onTap: () {
                                       Navigator.push(
                                         context,
@@ -139,7 +141,7 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                                       );
                                     },
                                   ),
-                                  Divider()
+                                  const Divider()
                                 ],
                               )),
                         );
@@ -151,7 +153,7 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AddAddress()));
+                              builder: (context) => const AddAddress()));
                     },
                     style: ElevatedButton.styleFrom(
                         primary: Colors.orange[400],
@@ -159,7 +161,7 @@ class _ViewAllAddressState extends State<ViewAllAddress> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         )),
-                    child: Text(
+                    child: const Text(
                       'اضف عنوان جديد',
                       style: TextStyle(fontFamily: 'Droid', fontSize: 16),
                     )),

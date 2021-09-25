@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:diva/apiResponse.dart';
+import 'package:diva/api_response.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:provider/provider.dart';
 import 'package:diva/Models/user.dart';
@@ -23,14 +23,14 @@ class _AddAddressState extends State<AddAddress> {
         builder: (context, cart, child) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'اضافة عنوان جديد',
           style: TextStyle(fontFamily: 'Droid', color: Colors.black54),
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[100],
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black54),
+        iconTheme: const IconThemeData(color: Colors.black54),
       ),
       body: ListView(children: [
         Directionality(textDirection: TextDirection.rtl, child: Form(
@@ -43,13 +43,13 @@ class _AddAddressState extends State<AddAddress> {
                 ),
                 Container(
                   height: 100,
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 10),
                   //color: Colors.white,
                   alignment: Alignment.center,
-                  child: Text('اضف عنوانك الحالي',style: TextStyle(fontSize: 18, fontFamily: 'Droid'),),
+                  child: const Text('اضف عنوانك الحالي',style: TextStyle(fontSize: 18, fontFamily: 'Droid'),),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   //color: Colors.redAccent,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -59,7 +59,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                           textDirection: TextDirection.rtl,
                           maxLength: 8,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               hintText: ' المنطقة',
                               hintStyle: TextStyle(
                                 fontFamily: 'Droid',
@@ -80,7 +80,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                             textDirection: TextDirection.rtl,
                             maxLength: 20,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 hintText: 'رقم القطعة',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Droid',
@@ -98,7 +98,7 @@ class _AddAddressState extends State<AddAddress> {
                     ],),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   //color: Colors.redAccent,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -108,7 +108,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                             textDirection: TextDirection.rtl,
                             maxLength: 30,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 hintText: 'رقم الشارع',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Droid',
@@ -128,7 +128,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                             textDirection: TextDirection.rtl,
                             maxLength: 30,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 hintText: 'رقم المنزل',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Droid',
@@ -146,7 +146,7 @@ class _AddAddressState extends State<AddAddress> {
                     ],),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   //color: Colors.redAccent,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -156,7 +156,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                             textDirection: TextDirection.rtl,
                             maxLength: 30,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 hintText: 'رقم الجادة',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Droid',
@@ -176,7 +176,7 @@ class _AddAddressState extends State<AddAddress> {
                         child: TextFormField(
                             textDirection: TextDirection.rtl,
                             maxLength: 30,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 hintText: 'الدور',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Droid',
@@ -193,14 +193,14 @@ class _AddAddressState extends State<AddAddress> {
                       ),
                     ],),
                 ),
-                Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+                const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
 
                 TextButton(
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       backgroundColor: Colors.orange[400],
                     ),
-                    child: Text('اضافة العنوان الجديد',
+                    child: const Text('اضافة العنوان الجديد',
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'Droid',

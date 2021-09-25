@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 messageDialog(BuildContext context, String msg) {
   return AlertDialog(
-    title: Text('Message dialog'),
+    title: const Text('Message dialog'),
     content: SizedBox(
         height: 200,
         width: 200,
@@ -11,7 +11,7 @@ messageDialog(BuildContext context, String msg) {
     actions: [
       TextButton(
         onPressed: () => Navigator.pop(context, 'OK'),
-        child: Text(
+        child: const Text(
           'OK',
           style: TextStyle(
             color: Color(0xFF6200EE),

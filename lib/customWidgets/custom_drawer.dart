@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:diva/followUpOrder/followOrder.dart';
+import 'package:diva/followUpOrder/follow_order.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:diva/support.dart';
 import 'package:provider/provider.dart';
-
 import '../profile.dart';
 import '../settings.dart';
 
 class CustomDrawer extends StatefulWidget {
+  const CustomDrawer({Key key}) : super(key: key);
+
   @override
   _CustomDrawerState createState() => _CustomDrawerState();
 }
@@ -31,18 +32,18 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   accountName: isSignIn
                       ? Text(
                           cart.user.name,
-                          style: TextStyle(color: Colors.orange),
+                          style: const TextStyle(color: Colors.orange),
                         )
-                      : Text('Anonymous'),
+                      : const Text('Anonymous'),
                   accountEmail: isSignIn
-                      ? Text(cart.user.email, style: TextStyle(color: Colors.orange))
-                      : Text('مستخدم افتراضي',
+                      ? Text(cart.user.email, style: const TextStyle(color: Colors.orange))
+                      : const Text('مستخدم افتراضي',
                           style: TextStyle(
                               fontFamily: 'Droid', color: Colors.grey)),
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                   ),
-                  currentAccountPicture: CircleAvatar(
+                  currentAccountPicture: const CircleAvatar(
                     backgroundColor: Colors.white,
                     child: Text(
                       "A",
@@ -52,29 +53,29 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   ),
                 ),
                 ListTile(
-                  title: Text(
+                  title: const Text(
                     'ملفي الشخصي',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Droid',
                     ),
                   ),
-                  leading: Icon(Icons.supervised_user_circle_outlined),
+                  leading: const Icon(Icons.supervised_user_circle_outlined),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Profile()));
+                        MaterialPageRoute(builder: (context) => const Profile()));
                   },
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
-                  title: Text(
+                  title: const Text(
                     'متابعة الطلبات',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Droid',
                     ),
                   ),
-                  leading: Icon(Icons.follow_the_signs),
+                  leading: const Icon(Icons.follow_the_signs),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -84,51 +85,51 @@ class _CustomDrawerState extends State<CustomDrawer> {
                                 )));
                   },
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
-                  title: Text(
+                  title: const Text(
                     'الدعم الفني',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Droid',
                     ),
                   ),
-                  leading: Icon(Icons.support),
+                  leading: const Icon(Icons.support),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Support()));
+                        MaterialPageRoute(builder: (context) => const Support()));
                   },
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
-                  title: Text(
+                  title: const Text(
                     'الاعدادات',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'Droid',
                     ),
                   ),
-                  leading: Icon(Icons.settings),
+                  leading: const Icon(Icons.settings),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Settings()));
+                        MaterialPageRoute(builder: (context) => const Settings()));
                   },
                 ),
-                Divider(),
+                const Divider(),
               ],
             )),
             Container(
-              margin: EdgeInsets.only(bottom: 30),
+              margin: const EdgeInsets.only(bottom: 30),
               child: isSignIn
                   ? ListTile(
-                      title: Text(
+                      title: const Text(
                         'تسجيل الخروج',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: 'Droid',
                         ),
                       ),
-                      leading: Icon(Icons.logout),
+                      leading: const Icon(Icons.logout),
                       onTap: () async {
 
                         isSignIn = false;
@@ -136,14 +137,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       },
                     )
                   : ListTile(
-                      title: Text(
+                      title: const Text(
                         'تسجيل الدخول',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: 'Droid',
                         ),
                       ),
-                      leading: Icon(Icons.logout),
+                      leading: const Icon(Icons.logout),
                       onTap: () {
                         Navigator.of(context).pushNamed('login');
                       },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:diva/apiResponse.dart';
+import 'package:diva/api_response.dart';
 
 class SignUpPage extends StatelessWidget {
   final signInForm = GlobalKey<FormState>();
@@ -22,7 +22,7 @@ class SignUpPage extends StatelessWidget {
               'https://flutterforweb.000webhostapp.com/resturant/logo.jpg',
               width: 150,
             ),
-            Text('تسجيل حساب جديد',
+            const Text('تسجيل حساب جديد',
                 style: TextStyle(
                     color: Colors.black, fontSize: 24, fontFamily: 'Droid')),
             Form(
@@ -36,10 +36,10 @@ class SignUpPage extends StatelessWidget {
                         maxLength: 8,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber),
+                                borderSide: const BorderSide(color: Colors.amber),
                                 borderRadius: BorderRadius.circular(10.0)),
                             hintText: 'رقم الهاتف',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               fontFamily: 'Droid',
                             )),
                         validator: (value) {
@@ -60,10 +60,10 @@ class SignUpPage extends StatelessWidget {
                           maxLength: 20,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.amber),
+                                  borderSide: const BorderSide(color: Colors.amber),
                                   borderRadius: BorderRadius.circular(10.0)),
                               hintText: 'الرقم السري',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
                               )),
                           validator: (value) {
@@ -83,10 +83,10 @@ class SignUpPage extends StatelessWidget {
                           maxLength: 30,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.amber),
+                                  borderSide: const BorderSide(color: Colors.amber),
                                   borderRadius: BorderRadius.circular(10.0)),
                               hintText: 'بريدك الالكتروني',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
                               )),
                           validator: (value) {
@@ -106,10 +106,10 @@ class SignUpPage extends StatelessWidget {
                           maxLength: 30,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.amber),
+                                  borderSide: const BorderSide(color: Colors.amber),
                                   borderRadius: BorderRadius.circular(10.0)),
                               hintText: 'الاسم',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
                               )),
                           validator: (value) {
@@ -126,10 +126,10 @@ class SignUpPage extends StatelessWidget {
                 )),
             TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   backgroundColor: Colors.black,
                 ),
-                child: Text('تسجيل حساب جديد',
+                child: const Text('تسجيل حساب جديد',
                     style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'Droid',
@@ -141,14 +141,14 @@ class SignUpPage extends StatelessWidget {
                   }
                 }),
             InkWell(
-              child: Text('العودة',
+              child: const Text('العودة',
                   style: TextStyle(
                       color: Colors.black, fontFamily: 'Droid', fontSize: 16)),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

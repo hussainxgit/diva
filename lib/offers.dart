@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'apiResponse.dart';
+import 'api_response.dart';
 
 class OffersPage extends StatelessWidget {
   const OffersPage({Key key}) : super(key: key);
@@ -11,7 +11,7 @@ class OffersPage extends StatelessWidget {
       builder: (context, products) {
         if (products.hasData) {
           return GridView.builder(
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 400,
               childAspectRatio: 3 / 3,
               crossAxisSpacing: 1,
@@ -28,7 +28,7 @@ class OffersPage extends StatelessWidget {
         } else if (products.hasError) {
           return Text("${products.error}");
         }
-        return SizedBox(
+        return const SizedBox(
           height: 60.0,
           child: Center(
               child: CircularProgressIndicator(

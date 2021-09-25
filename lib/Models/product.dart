@@ -1,4 +1,4 @@
-import 'package:diva/Models/addOns.dart';
+import 'package:diva/Models/add_ons.dart';
 
 class Product {
   String id;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Models/addOns.dart';
+import 'Models/add_ons.dart';
 import 'package:provider/provider.dart';
 import 'provider/cart.dart';
-import 'Models/cartItem.dart';
+import 'Models/cart_item.dart';
 import 'Models/product.dart';
 
 class ProductSelect extends StatefulWidget {
@@ -35,8 +35,8 @@ class _ProductSelectState extends State<ProductSelect> {
     return Consumer<Carts>(// List of Carts from Consumer.
         builder: (context, cart, child) {
       return Scaffold(
-        backgroundColor: Color(0xFFF5F6F9),
-        appBar: CustomAppBar(),
+        backgroundColor: const Color(0xFFF5F6F9),
+        appBar: const CustomAppBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -56,9 +56,9 @@ class _ProductSelectState extends State<ProductSelect> {
                     ),
                     Container(
                       //height: 300,
-                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                      margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                       width: double.infinity,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(35.0),
@@ -75,11 +75,11 @@ class _ProductSelectState extends State<ProductSelect> {
                                   title: Text(
                                     passedProduct.name,
                                     textAlign: TextAlign.right,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 18, fontFamily: 'Droid'),
                                   ),
                                   subtitle: Text(passedProduct.description,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 12,
                                           fontFamily: "Droid",
                                           color: Colors.grey)),
@@ -88,12 +88,12 @@ class _ProductSelectState extends State<ProductSelect> {
                                     child: Text(
                                         "KWD ${totalPriceFinal.toString()}"
                                             .toUpperCase(),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 14, fontFamily: "Droid")),
                                     style: ButtonStyle(
                                         padding:
                                             MaterialStateProperty.all<EdgeInsets>(
-                                                EdgeInsets.all(5.0)),
+                                                const EdgeInsets.all(5.0)),
                                         foregroundColor:
                                             MaterialStateProperty.all<Color>(
                                                 Colors.lightGreen),
@@ -102,7 +102,7 @@ class _ProductSelectState extends State<ProductSelect> {
                                             RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(18.0),
-                                                side: BorderSide(
+                                                side: const BorderSide(
                                                     color: Colors.lightGreen)))),
                                   ),
                                 ),
@@ -110,9 +110,9 @@ class _ProductSelectState extends State<ProductSelect> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Container(
-                              padding: EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
                               width: 104,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   color: Color(0xffffE6E6),
                                   borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(20),
@@ -126,7 +126,7 @@ class _ProductSelectState extends State<ProductSelect> {
                               ),
                             ),
                           ),
-                          Text('اضافات اختيارية',
+                          const Text('اضافات اختيارية',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontFamily: "Droid",
@@ -145,16 +145,16 @@ class _ProductSelectState extends State<ProductSelect> {
                                 textDirection: TextDirection.rtl,
                                 child: CheckboxListTile(
                                   title: Text(passedProduct.addons[i].name,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 14, fontFamily: "Droid")),
                                   subtitle: passedProduct.addons[i].price != 0
                                       ? Text(
                                           passedProduct.addons[i].price
                                                   .toString() +
                                               " دك ",
-                                          style: TextStyle(fontFamily: 'Droid'),
+                                          style: const TextStyle(fontFamily: 'Droid'),
                                         )
-                                      : Text('free'),
+                                      : const Text('free'),
                                   value: checkBoxesHandle[i],
                                   onChanged: (bool value) {
                                     setState(() {
@@ -178,14 +178,14 @@ class _ProductSelectState extends State<ProductSelect> {
                               );
                             },
                           ),
-                          Divider(),
+                          const Divider(),
                           Padding(
                             padding: const EdgeInsets.all(15.0),
                             child: TextField(
                                 maxLines: 1,
                                 maxLength: 60,
                                 textAlign: TextAlign.right,
-                                decoration: InputDecoration.collapsed(
+                                decoration: const InputDecoration.collapsed(
                                     hintText: "اضف ملاحطاتك ..",
                                     hintStyle: TextStyle(fontFamily: 'Droid')),
                                 onChanged: (value) {
@@ -196,7 +196,7 @@ class _ProductSelectState extends State<ProductSelect> {
                                   }
                                 }),
                           ),
-                          Divider(),
+                          const Divider(),
                           SizedBox(
                             height: 100,
                             width: 300,
@@ -207,15 +207,15 @@ class _ProductSelectState extends State<ProductSelect> {
                               children: [
                                 Container(
                                   height: 60,
-                                  margin: EdgeInsets.all(5),
+                                  margin: const EdgeInsets.all(5),
                                   child: OutlinedButton(
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.add,
                                       color: Colors.black54,
                                     ),
                                     style: OutlinedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      side: BorderSide(
+                                      shape: const CircleBorder(),
+                                      side: const BorderSide(
                                           width: 1, color: Colors.black54),
                                     ),
                                     onPressed: () {
@@ -229,19 +229,19 @@ class _ProductSelectState extends State<ProductSelect> {
                                 ),
                                 Text(
                                   '$counter',
-                                  style: TextStyle(fontSize: 22),
+                                  style: const TextStyle(fontSize: 22),
                                 ),
                                 Container(
                                   height: 60,
-                                  margin: EdgeInsets.all(5),
+                                  margin: const EdgeInsets.all(5),
                                   child: OutlinedButton(
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.remove,
                                       color: Colors.black54,
                                     ),
                                     style: OutlinedButton.styleFrom(
-                                      shape: CircleBorder(),
-                                      side: BorderSide(
+                                      shape: const CircleBorder(),
+                                      side: const BorderSide(
                                           width: 1, color: Colors.black54),
                                     ),
                                     onPressed: () {
@@ -255,7 +255,7 @@ class _ProductSelectState extends State<ProductSelect> {
                                     },
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   ': العدد ',
                                   style: TextStyle(
                                       fontSize: 18, fontFamily: 'Droid'),
@@ -274,13 +274,13 @@ class _ProductSelectState extends State<ProductSelect> {
         ),
         bottomNavigationBar: SizedBox(
           child: Container(
-            padding: EdgeInsets.fromLTRB(0, 15.0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 15.0, 0, 0),
             //width: double.infinity,
             height: 110,
             child: ElevatedButton(
               child: Text(
                 'أكمل الطلب ( ${totalPriceFinal.toString()} دك )',
-                style: TextStyle(fontSize: 20, fontFamily: "Droid"),
+                style: const TextStyle(fontSize: 20, fontFamily: "Droid"),
               ),
               onPressed: () {
                 Product product = Product(
@@ -305,6 +305,8 @@ class _ProductSelectState extends State<ProductSelect> {
 
 // Calling Custom Class
 class CustomAppBar extends PreferredSize {
+  const CustomAppBar({Key key}) : super(key: key);
+
   @override
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 
@@ -312,7 +314,7 @@ class CustomAppBar extends PreferredSize {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -321,7 +323,7 @@ class CustomAppBar extends PreferredSize {
                 color: Colors.white, // button color
                 child: InkWell(
                   splashColor: Colors.red, // inkwell color
-                  child: SizedBox(
+                  child: const SizedBox(
                       width: 56,
                       height: 56,
                       child: Icon(Icons.arrow_back_outlined)),
@@ -332,7 +334,7 @@ class CustomAppBar extends PreferredSize {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular((14)),
                 color: Colors.white,

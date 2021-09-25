@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'apiResponse.dart';
+import 'api_response.dart';
 import 'package:diva/Models/categories.dart';
 
 class HomeCategories extends StatelessWidget {
+  const HomeCategories({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -18,14 +20,14 @@ class HomeCategories extends StatelessWidget {
                   // ندخلها بالبلدر علشان اللوب
                   return InkWell(
                     child: Container(
-                      margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                      padding: EdgeInsets.all(5.0),
+                      margin: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                      padding: const EdgeInsets.all(5.0),
                       alignment: Alignment.center,
                       width: 130,
                       decoration: BoxDecoration(
                           color: Colors.black54,
                           shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15.0),
                             topRight: Radius.circular(15.0),
                             bottomRight: Radius.circular(15.0),
@@ -40,7 +42,7 @@ class HomeCategories extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.bottomCenter,
                         child: Text(categories.data[i].name,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontFamily: 'Droid',
                               fontSize: 18,
@@ -60,7 +62,7 @@ class HomeCategories extends StatelessWidget {
         }
 
         // By default, show a loading spinner.
-        return SizedBox(
+        return const SizedBox(
           height: 60.0,
           child: Center(
               child: CircularProgressIndicator(

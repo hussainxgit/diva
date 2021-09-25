@@ -5,6 +5,8 @@ import 'categories.dart';
 import 'customWidgets/sliders.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -14,10 +16,10 @@ class HomePage extends StatelessWidget {
           child: HomeSlider(),
         ), // Slider
         Container(
-          margin: EdgeInsets.all(10.0),
+          margin: const EdgeInsets.all(10.0),
           height: 35,
           alignment: Alignment.topRight,
-          child: Text(
+          child: const Text(
             'شنو تبي تاكل ؟',
             style: TextStyle(
               fontSize: 20,
@@ -27,14 +29,14 @@ class HomePage extends StatelessWidget {
         ), // Text
         Container(
           height: 180,
-          margin: EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5.0),
           child: HomeCategories(),
         ), // Menu Categories
         Container(
-          margin: EdgeInsets.all(10.0),
+          margin: const EdgeInsets.all(10.0),
           height: 35,
           alignment: Alignment.topRight,
-          child: Text(
+          child: const Text(
             'الاكثر طلبا هذا الشهر',
             style: TextStyle(
               fontSize: 20,
@@ -42,7 +44,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ), // Text (best Sales)
-        BestSales(),
+        const BestSales(),
       ],
     );
   }

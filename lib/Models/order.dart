@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:diva/Models/cartItem.dart';
+import 'package:diva/Models/cart_item.dart';
 import 'package:diva/Models/user.dart';
 
 

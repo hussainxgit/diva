@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:diva/Models/user.dart';
-import 'package:diva/apiResponse.dart';
+import 'package:diva/api_response.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:provider/provider.dart';
 
@@ -27,18 +27,18 @@ class _EditAddressState extends State<EditAddress> {
         builder: (context, cart, child) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'تعديل عنوان',
             style: TextStyle(fontFamily: 'Droid', color: Colors.black54),
           ),
           centerTitle: true,
           backgroundColor: Colors.grey[100],
           elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black54),
+          iconTheme: const IconThemeData(color: Colors.black54),
         ),
         body: ListView(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 200,
               child: Image(
                 image: AssetImage('images/location.png'),
@@ -48,7 +48,7 @@ class _EditAddressState extends State<EditAddress> {
             Container(
               height: 70,
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'تعديل العنوان',
                 style: TextStyle(fontSize: 18, fontFamily: 'Droid'),
               ),
@@ -60,7 +60,7 @@ class _EditAddressState extends State<EditAddress> {
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -72,12 +72,12 @@ class _EditAddressState extends State<EditAddress> {
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                         borderSide:
-                                            BorderSide(color: Colors.amber),
+                                            const BorderSide(color: Colors.amber),
                                         borderRadius:
                                             BorderRadius.circular(10.0)),
                                     hintText: cart
                                         .user.address[widget.addressIndex].area,
-                                    hintStyle: TextStyle(
+                                    hintStyle: const TextStyle(
                                       fontFamily: 'Droid',
                                     )),
                                 initialValue:
@@ -101,12 +101,12 @@ class _EditAddressState extends State<EditAddress> {
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.amber),
+                                              const BorderSide(color: Colors.amber),
                                           borderRadius:
                                               BorderRadius.circular(10.0)),
                                       hintText: cart.user
                                           .address[widget.addressIndex].block,
-                                      hintStyle: TextStyle(
+                                      hintStyle: const TextStyle(
                                         fontFamily: 'Droid',
                                       )),
                                   initialValue: cart
@@ -125,7 +125,7 @@ class _EditAddressState extends State<EditAddress> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -137,12 +137,12 @@ class _EditAddressState extends State<EditAddress> {
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.amber),
+                                              const BorderSide(color: Colors.amber),
                                           borderRadius:
                                               BorderRadius.circular(10.0)),
                                       hintText: cart.user
                                           .address[widget.addressIndex].street,
-                                      hintStyle: TextStyle(
+                                      hintStyle: const TextStyle(
                                         fontFamily: 'Droid',
                                       )),
                                   initialValue: cart
@@ -165,14 +165,14 @@ class _EditAddressState extends State<EditAddress> {
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.amber),
+                                              const BorderSide(color: Colors.amber),
                                           borderRadius:
                                               BorderRadius.circular(10.0)),
                                       hintText: cart
                                           .user
                                           .address[widget.addressIndex]
                                           .houseNumber,
-                                      hintStyle: TextStyle(
+                                      hintStyle: const TextStyle(
                                         fontFamily: 'Droid',
                                       )),
                                   initialValue: cart.user
@@ -191,7 +191,7 @@ class _EditAddressState extends State<EditAddress> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -203,12 +203,12 @@ class _EditAddressState extends State<EditAddress> {
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.amber),
+                                              const BorderSide(color: Colors.amber),
                                           borderRadius:
                                               BorderRadius.circular(10.0)),
                                       hintText: cart.user
                                           .address[widget.addressIndex].jada,
-                                      hintStyle: TextStyle(
+                                      hintStyle: const TextStyle(
                                         fontFamily: 'Droid',
                                       )),
                                   initialValue: cart
@@ -231,10 +231,10 @@ class _EditAddressState extends State<EditAddress> {
                                   decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.amber),
+                                              const BorderSide(color: Colors.amber),
                                           borderRadius:
                                               BorderRadius.circular(10.0)),
-                                      hintStyle: TextStyle(
+                                      hintStyle: const TextStyle(
                                         fontFamily: 'Droid',
                                       )),
                                   initialValue: cart
@@ -257,7 +257,7 @@ class _EditAddressState extends State<EditAddress> {
                           child: Directionality(
                             textDirection: TextDirection.rtl,
                             child: CheckboxListTile(
-                              title: Text(
+                              title: const Text(
                                 "عنواني الافتراضي",
                                 style: TextStyle(fontFamily: 'Droid'),
                               ),
@@ -275,13 +275,13 @@ class _EditAddressState extends State<EditAddress> {
                               },
                             ),
                           )),
-                      Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+                      const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                       TextButton(
                           style: TextButton.styleFrom(
-                            padding: EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(20.0),
                             backgroundColor: Colors.orange[400],
                           ),
-                          child: Text('تعديل العنوان ',
+                          child: const Text('تعديل العنوان ',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Droid',

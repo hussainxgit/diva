@@ -62,7 +62,7 @@ class CartPage extends StatelessWidget {
                                   style: ButtonStyle(
                                       padding:
                                           MaterialStateProperty.all<EdgeInsets>(
-                                              EdgeInsets.all(5.0)),
+                                              const EdgeInsets.all(5.0)),
                                       foregroundColor:
                                           MaterialStateProperty.all<Color>(
                                               Colors.red),
@@ -71,7 +71,7 @@ class CartPage extends StatelessWidget {
                                           RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(18.0),
-                                              side: BorderSide(
+                                              side: const BorderSide(
                                                   color: Colors.red)))),
                                   onPressed: () {
                                     cart.remove(cart.basketItems[i]);
@@ -118,7 +118,7 @@ class CartPage extends StatelessWidget {
                                     height: 25,
                                     child: Text(
                                       cart.basketItems[i].productItem.notes,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontFamily: 'Droid',
                                         fontSize: 12,
                                       ),
@@ -132,7 +132,7 @@ class CartPage extends StatelessWidget {
                   );
                 }),
           ),
-          Divider(),
+          const Divider(),
           Container(
             height: 100,
             color: Colors.grey[100],
@@ -163,7 +163,7 @@ class CartPage extends StatelessWidget {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),
-                                    side: BorderSide(color: Colors.green)))),
+                                    side: const BorderSide(color: Colors.green)))),
                   ),
                 )
                     : SizedBox(
@@ -178,14 +178,14 @@ class CartPage extends StatelessWidget {
                     ),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
-                            EdgeInsets.all(5.0)),
+                            const EdgeInsets.all(5.0)),
                         foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.orange),
                         shape:
                         MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
-                                side: BorderSide(color: Colors.orange)))),
+                                side: const BorderSide(color: Colors.orange)))),
                   ),
                 ),
                 Text(

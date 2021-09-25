@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'apiResponse.dart';
-import 'productView.dart';
+import 'api_response.dart';
+import 'product_view.dart';
 
 class BestSales extends StatelessWidget {
   const BestSales({Key key}) : super(key: key);

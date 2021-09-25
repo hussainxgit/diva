@@ -1,16 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'address/ViewAllAddress.dart';
-import 'followUpOrder/followOrder.dart';
+import 'address/view_all_address.dart';
+import 'followUpOrder/follow_order.dart';
 import 'login/login.dart';
 import 'login/signup.dart';
-import 'homePage.dart';
+import 'home_page.dart';
 import 'offers.dart';
-import 'selectCategory.dart';
+import 'select_category.dart';
 import 'cart.dart';
 import 'provider/cart.dart';
 import 'package:provider/provider.dart';
-import 'customWidgets/customDrawer.dart';
+import 'customWidgets/custom_drawer.dart';
 import 'checkout.dart';
 import 'address/address.dart';
 
@@ -23,9 +23,9 @@ void main() async {
     child: MaterialApp(
       initialRoute: 'login',
       routes: {
-        'MyApp': (context) => MyApp(),
+        'MyApp': (context) => const MyApp(),
         'home': (context) => HomePage(),
-        'selectCategory': (context) => SelectCategoryItems(),
+        'selectCategory': (context) => const SelectCategoryItems(),
         'login': (context) => LoginPage(),
         'signUp': (context) => SignUpPage(),
         'checkout': (context) => CheckOut(),
@@ -39,6 +39,8 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -48,8 +50,8 @@ class _MyAppState extends State<MyApp> {
   Widget currentScreen;
   final _pageOptions = [
     HomePage(),
-    OffersPage(),
-    CartPage(),
+    const OffersPage(),
+    const CartPage(),
   ];
 
   @override
@@ -150,9 +152,9 @@ class _MyAppState extends State<MyApp> {
               label: "الطلبات",
             ),
           ],
-          selectedLabelStyle: TextStyle(fontSize: 16, fontFamily: 'Droid'),
+          selectedLabelStyle: const TextStyle(fontSize: 16, fontFamily: 'Droid'),
           selectedItemColor: Colors.orangeAccent,
-          unselectedLabelStyle: TextStyle(fontSize: 14, fontFamily: 'Droid'),
+          unselectedLabelStyle: const TextStyle(fontSize: 14, fontFamily: 'Droid'),
         ),
       );
     });

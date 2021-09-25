@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:diva/followUpOrder/orderView.dart';
+import 'package:diva/followUpOrder/order_view.dart';
 import 'package:myfatoorah_flutter/myfatoorah_flutter.dart';
 import 'Models/order.dart';
-import 'address/ViewAllAddress.dart';
+import 'address/view_all_address.dart';
 import 'address/address.dart';
-import 'Models/cartItem.dart';
+import 'Models/cart_item.dart';
 import 'provider/cart.dart';
 import 'Models/user.dart';
-import 'apiResponse.dart';
+import 'api_response.dart';
 import 'package:provider/provider.dart';
-import 'customWidgets/AlertDialog.dart';
+import 'customWidgets/alert_dialog.dart';
 
 class CheckOut extends StatefulWidget {
   final List<Item> orderItems;
@@ -80,7 +80,7 @@ class _CheckOutState extends State<CheckOut> {
       return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'خطوات اكمال الطلب',
             style: TextStyle(
                 fontSize: 18, fontFamily: 'Droid', color: Colors.black54),
@@ -88,19 +88,19 @@ class _CheckOutState extends State<CheckOut> {
           centerTitle: true,
           backgroundColor: Colors.grey[100],
           elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black54),
+          iconTheme: const IconThemeData(color: Colors.black54),
         ),
         body: ListView(
           children: [
             Container(
-              margin: EdgeInsets.all(15.0),
+              margin: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                     child: Column(
                       children: [
-                        Image(
+                        const Image(
                           image: AssetImage('images/delivery.jpg'),
                           fit: BoxFit.cover,
                         ),
@@ -112,7 +112,7 @@ class _CheckOutState extends State<CheckOut> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.location_on,
                                           color: Colors.orangeAccent,
                                           size: 33,
@@ -122,7 +122,7 @@ class _CheckOutState extends State<CheckOut> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
                                           children: [
-                                            Text(
+                                            const Text(
                                               "لم تحدد لك عنوان افتراضي",
                                               style: TextStyle(
                                                   fontSize: 16,
@@ -133,7 +133,7 @@ class _CheckOutState extends State<CheckOut> {
                                                   backgroundColor:
                                                       Colors.orange,
                                                   primary: Colors.white),
-                                              child: Padding(
+                                              child: const Padding(
                                                   padding: EdgeInsets.only(
                                                       left: 5, right: 15),
                                                   child: Center(
@@ -163,7 +163,7 @@ class _CheckOutState extends State<CheckOut> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.location_on,
                                           color: Colors.orangeAccent,
                                           size: 33,
@@ -177,7 +177,7 @@ class _CheckOutState extends State<CheckOut> {
                                               cart.user
                                                   .getDefaultAddress()
                                                   .area,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontSize: 14,
                                                   fontFamily: 'Droid',
                                                   color: Colors.grey),
@@ -188,12 +188,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .houseNumber,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'شقة',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -204,12 +204,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .floor,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'دور',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -220,12 +220,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .houseNumber,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'منزل',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -236,12 +236,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .jada,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'جادة',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -252,12 +252,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .street,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'شارع',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -268,12 +268,12 @@ class _CheckOutState extends State<CheckOut> {
                                                   cart.user
                                                       .getDefaultAddress()
                                                       .block,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontSize: 14,
                                                       fontFamily: 'Droid',
                                                       color: Colors.grey),
                                                 ),
-                                                Text(
+                                                const Text(
                                                   'ق',
                                                   style: TextStyle(
                                                       fontSize: 14,
@@ -283,7 +283,7 @@ class _CheckOutState extends State<CheckOut> {
                                               ],
                                             ),
                                             InkWell(
-                                              child: Text(
+                                              child: const Text(
                                                 'تغيير',
                                                 style: TextStyle(
                                                     fontSize: 16,
@@ -309,7 +309,7 @@ class _CheckOutState extends State<CheckOut> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.location_on,
                                       color: Colors.orangeAccent,
                                       size: 33,
@@ -319,7 +319,7 @@ class _CheckOutState extends State<CheckOut> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
                                       children: [
-                                        Text(
+                                        const Text(
                                           "لايوجد عنوان مسجل مسبقاً",
                                           style: TextStyle(
                                               fontSize: 16,
@@ -329,7 +329,7 @@ class _CheckOutState extends State<CheckOut> {
                                           style: TextButton.styleFrom(
                                               backgroundColor: Colors.red,
                                               primary: Colors.white),
-                                          child: Padding(
+                                          child: const Padding(
                                               padding: EdgeInsets.only(
                                                   left: 5, right: 15),
                                               child: Center(
@@ -344,7 +344,7 @@ class _CheckOutState extends State<CheckOut> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      AddAddress()),
+                                                      const AddAddress()),
                                             );
                                           },
                                         ),
@@ -356,7 +356,7 @@ class _CheckOutState extends State<CheckOut> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Container(
                     height: 60,
                     child: Row(
@@ -378,28 +378,28 @@ class _CheckOutState extends State<CheckOut> {
                       ],
                     ),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
                         color: Colors.orange[400]),
                   ),
-                  Divider(),
+                  const Divider(),
                   Column(
                     children: [
-                      Text('ملخص الدفع',
+                      const Text('ملخص الدفع',
                           style: TextStyle(fontSize: 18, fontFamily: 'Droid')),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              Text(' طلب  ',
+                              const Text(' طلب  ',
                                   style: TextStyle(
                                       fontSize: 14, fontFamily: 'Droid')),
                               Text(widget.orderItems.length.toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 14, fontFamily: 'Droid')),
                             ],
                           ),
-                          Text('مجموع الطلبات',
+                          const Text('مجموع الطلبات',
                               style:
                                   TextStyle(fontSize: 14, fontFamily: 'Droid')),
                         ],
@@ -417,7 +417,7 @@ class _CheckOutState extends State<CheckOut> {
                                       fontSize: 14, fontFamily: 'Droid')),
                             ],
                           ),
-                          Text('رسوم التوصيل',
+                          const Text('رسوم التوصيل',
                               style:
                                   TextStyle(fontSize: 14, fontFamily: 'Droid')),
                         ],
@@ -427,15 +427,15 @@ class _CheckOutState extends State<CheckOut> {
                         children: [
                           Row(
                             children: [
-                              Text(' دك  ',
+                              const Text(' دك  ',
                                   style: TextStyle(
                                       fontSize: 14, fontFamily: 'Droid')),
                               Text(cart.totalPrice.toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 14, fontFamily: 'Droid')),
                             ],
                           ),
-                          Text('المبلغ الاجمالي',
+                          const Text('المبلغ الاجمالي',
                               style:
                                   TextStyle(fontSize: 14, fontFamily: 'Droid')),
                         ],
@@ -448,7 +448,7 @@ class _CheckOutState extends State<CheckOut> {
           ],
         ),
         bottomNavigationBar: Container(
-          padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
           height: 100,
           color: Colors.grey[200],
           child: ElevatedButton(
@@ -474,7 +474,7 @@ class _CheckOutState extends State<CheckOut> {
                     builder: (_) => messageDialog(context, "user not found"));
               }
             },
-            child: Text(
+            child: const Text(
               'تنفيذ الطلب',
               style: TextStyle(fontFamily: 'Droid', fontSize: 18),
             ),

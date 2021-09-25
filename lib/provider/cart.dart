@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:diva/Models/cartItem.dart';
+import 'package:diva/Models/cart_item.dart';
 import 'package:diva/Models/user.dart';
 
 class Carts extends ChangeNotifier {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:diva/Models/order.dart';
-import 'package:diva/followUpOrder/orderView.dart';
+import 'package:diva/followUpOrder/order_view.dart';
 import '../Models/user.dart';
-import '../apiResponse.dart';
+import '../api_response.dart';
 
 class FollowOrder extends StatefulWidget {
   final User user;
@@ -22,19 +22,19 @@ class _FollowOrderState extends State<FollowOrder> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'قائمة الطلبيات',
             style: TextStyle(fontFamily: 'Droid', color: Colors.black54),
           ),
           centerTitle: true,
           backgroundColor: Colors.grey[100],
           elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black54),
+          iconTheme: const IconThemeData(color: Colors.black54),
         ),
         body: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
           children: [
-            SizedBox(
+            const SizedBox(
               child: Image(
                 image: AssetImage('images/delivery.jpg'),
                 fit: BoxFit.cover,
@@ -43,7 +43,7 @@ class _FollowOrderState extends State<FollowOrder> {
             Container(
               height: 70,
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 'قائمة الطلبيات (قيد الانتظار) الخاصة بك',
                 style: TextStyle(fontSize: 18, fontFamily: 'Droid'),
               ),
@@ -55,7 +55,7 @@ class _FollowOrderState extends State<FollowOrder> {
                   builder: (context, AsyncSnapshot<List<Order>>snapshot) {
                     if (snapshot.hasData) {
                       return ListView.builder(
-                          physics:BouncingScrollPhysics(),
+                          physics:const BouncingScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: snapshot.data.length,
                           itemBuilder: (context, index) {
@@ -63,9 +63,9 @@ class _FollowOrderState extends State<FollowOrder> {
                               background: Container(
                                 color: Colors.red,
                                 child: Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 20),
+                                  margin: const EdgeInsets.symmetric(horizontal: 20),
                                   alignment: Alignment.centerRight,
-                                  child: Text(
+                                  child: const Text(
                                     'الغاء الطلب',
                                     style: TextStyle(
                                         fontFamily: 'Droid',
@@ -83,11 +83,11 @@ class _FollowOrderState extends State<FollowOrder> {
                                       ListTile(
                                         title: Text(
                                           snapshot.data[index].orderItems[0].productItem.name,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontFamily: 'Droid',
                                               fontSize: 14),
                                         ),
-                                        leading: Icon(
+                                        leading: const Icon(
                                             Icons.location_history_outlined),
                                         onTap: () {
                                           Navigator.push(
@@ -98,7 +98,7 @@ class _FollowOrderState extends State<FollowOrder> {
                                           );
                                         },
                                       ),
-                                      Divider()
+                                      const Divider()
                                     ],
                                   )),
                             );
@@ -110,8 +110,8 @@ class _FollowOrderState extends State<FollowOrder> {
                         child: Container(
                             height: 50,
                             width: 50,
-                            margin: EdgeInsets.all(10),
-                            child: CircularProgressIndicator(
+                            margin: const EdgeInsets.all(10),
+                            child: const CircularProgressIndicator(
                               backgroundColor: Colors.orange,
                             )));
                   }),
