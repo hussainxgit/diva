@@ -459,7 +459,7 @@ class _CheckOutState extends State<CheckOut> {
             ),
             onPressed: () async {
               if (cart.user != null) {
-                if (cart.user.address == null) {
+                if (cart.user.address.isEmpty) {
                   showDialog(
                       context: context,
                       builder: (_) =>
