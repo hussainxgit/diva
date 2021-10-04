@@ -21,6 +21,7 @@ class OffersPage extends StatelessWidget {
             itemBuilder: (context, i) {
               return Image(
                 image: NetworkImage(products.data[i].image),
+                fit: BoxFit.cover,
               );
             },
 
