@@ -31,26 +31,30 @@ class Profile extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(10),
           ),
-          const Text('Name of Client'),
-          const Padding(
-            padding: EdgeInsets.all(10),
-          ),
+          const Text('شحفان القطو', style: TextStyle(fontSize: 16,fontFamily: 'Droid'),),
+
           Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
-                onPrimary: Colors.white,
-                padding: const EdgeInsets.all(10),
-                textStyle: const TextStyle(fontFamily: 'Droid',
-                fontSize: 18,)
+            child: Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(20),
+              //padding: EdgeInsets.all(20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.orange[400],
+                    onPrimary: Colors.white,
+                    padding: const EdgeInsets.all(10.0),
+                    textStyle: const TextStyle(fontFamily: 'Droid',fontSize: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ViewAllAddress()),
+                  );
+                },
+                child: const Text('العناوين المسجلة'),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ViewAllAddress()),
-                );
-              },
-              child: const Text('العناوين المسجلة'),
             ),
           )
         ],
