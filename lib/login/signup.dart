@@ -16,8 +16,9 @@ class SignUpPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const Padding(padding: EdgeInsets.all(50),),
             Image.network(
               'https://flutterforweb.000webhostapp.com/resturant/logo.jpg',
               width: 150,
@@ -25,6 +26,7 @@ class SignUpPage extends StatelessWidget {
             const Text('تسجيل حساب جديد',
                 style: TextStyle(
                     color: Colors.black, fontSize: 24, fontFamily: 'Droid')),
+            const Padding(padding: EdgeInsets.all(10),),
             Form(
                 key: signInForm,
                 child: Column(
@@ -35,9 +37,10 @@ class SignUpPage extends StatelessWidget {
                         textDirection: TextDirection.rtl,
                         maxLength: 8,
                         decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.only(left: 20.0),
                             border: OutlineInputBorder(
                                 borderSide: const BorderSide(color: Colors.amber),
-                                borderRadius: BorderRadius.circular(10.0)),
+                                borderRadius: BorderRadius.circular(20.0)),
                             hintText: 'رقم الهاتف',
                             hintStyle: const TextStyle(
                               fontFamily: 'Droid',
@@ -59,9 +62,10 @@ class SignUpPage extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           maxLength: 20,
                           decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 20.0),
                               border: OutlineInputBorder(
                                   borderSide: const BorderSide(color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(10.0)),
+                                  borderRadius: BorderRadius.circular(20.0)),
                               hintText: 'الرقم السري',
                               hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
@@ -82,9 +86,10 @@ class SignUpPage extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           maxLength: 30,
                           decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 20.0),
                               border: OutlineInputBorder(
                                   borderSide: const BorderSide(color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(10.0)),
+                                  borderRadius: BorderRadius.circular(20.0)),
                               hintText: 'بريدك الالكتروني',
                               hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
@@ -105,9 +110,10 @@ class SignUpPage extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           maxLength: 30,
                           decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 20.0),
                               border: OutlineInputBorder(
                                   borderSide: const BorderSide(color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(10.0)),
+                                  borderRadius: BorderRadius.circular(20.0)),
                               hintText: 'الاسم',
                               hintStyle: const TextStyle(
                                 fontFamily: 'Droid',
@@ -140,6 +146,7 @@ class SignUpPage extends StatelessWidget {
                     await signUp(phone, password, name, email, context);
                   }
                 }),
+            const Padding(padding: EdgeInsets.all(30),),
             InkWell(
               child: const Text('العودة',
                   style: TextStyle(
@@ -148,9 +155,6 @@ class SignUpPage extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            const SizedBox(
-              height: 20,
-            )
           ],
         )),
       ),
