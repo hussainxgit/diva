@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:diva/api_response.dart';
+import 'package:diva/services/api_response.dart';
 import 'package:diva/login//signup.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:provider/provider.dart';
@@ -149,8 +149,13 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.black,
                       fontFamily: 'Droid',
                       fontSize: 16)),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, 'MyApp');
+              onTap: () async {
+                await signInAsAnonymous().then((user) {
+                  if(user != null){
+                    cart.saveUserInProvider(user);
+                    return Navigator.pushReplacementNamed(context, 'MyApp', arguments: user);
+                  }
+                });
               },
             ),
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:diva/address/address.dart';
-import 'package:diva/api_response.dart';
+import 'package:diva/services/api_response.dart';
 import 'package:diva/Models/user.dart';
 import 'package:diva/address/edit_address.dart';
 import 'package:diva/provider/cart.dart';

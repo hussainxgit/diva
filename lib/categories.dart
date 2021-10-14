@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'api_response.dart';
+import 'services/api_response.dart';
 import 'package:diva/Models/categories.dart';
 
 class HomeCategories extends StatelessWidget {

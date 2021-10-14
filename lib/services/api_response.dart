@@ -1,12 +1,11 @@
 import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
-import 'Models/categories.dart';
-import 'Models/product.dart';
+import '../Models/categories.dart';
+import '../Models/product.dart';
 import 'dart:async';
-import 'Models/user.dart';
+import '../Models/user.dart';
 import 'package:diva/Models/order.dart';
 
 // Url https://flutterforweb.000webhostapp.com/
@@ -101,14 +100,6 @@ Future<Order> placeOrder(Order order, BuildContext context) async {
       .then((value) => _order);
 }
 
-// Future<Order> getOrderLevelData(int val) async {
-//   var url = Uri.parse(apiUrl + "order/" + val.toString());
-//   http.Response response = await http.get(url);
-//   var responseBody = jsonDecode(response.body);
-//   Order order = Order.fromJson(responseBody['data']);
-//   return order;
-// }
-
 Future<List<Order>> getUserPendingOrders(String userId) async {
   return await _ordersCollection.where('userId', isEqualTo: userId).get().then(
           (value) => value.docs
@@ -144,3 +135,14 @@ Future<void> addressUpdate(User user, Address address) async {
 Future<void> addressRemove(Address address, User user) async {
   return await _usersCollection.doc(user.id).update({'address': user.address.map((e) => e.toFirebaseJson()).toList()});
 }
+
+Future<User> signInAsAnonymous() async {
+  User user;
+  if(_auth.currentUser != null){
+    user = User(id: _auth.currentUser.uid, email: 'none@none.none', name: 'Anonymous', phone: '00000000', address: []);
+  }else {
+    user = await _auth.signInAnonymously().then((value) => User(id: value.user.uid));
+  }
+  return user;
+}
+

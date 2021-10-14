@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'api_response.dart';
+import 'services/api_response.dart';
 
 class OffersPage extends StatelessWidget {
   const OffersPage({Key key}) : super(key: key);

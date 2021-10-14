@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:diva/api_response.dart';
+import 'package:diva/services/api_response.dart';
 import 'package:diva/provider/cart.dart';
 import 'package:provider/provider.dart';
 import 'package:diva/Models/user.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:diva/Models/order.dart';
 import 'package:diva/followUpOrder/order_view.dart';
 import '../Models/user.dart';
-import '../api_response.dart';
+import '../services/api_response.dart';
 
 class FollowOrder extends StatefulWidget {
   final User user;
